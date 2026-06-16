@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Privacy Policy for Mini OpenStax. Learn how we protect your data and maintain a privacy-first educational experience for Ghanaian learners.">
+<title>Privacy Policy | Mini OpenStax</title>
+
+<!-- Google Fonts: Inter & Playfair Display via media="print" onload trick -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome 6.4.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --green: #006b3d;
+  --green-dark: #00502e;
+  --green-light: rgba(0, 107, 61, 0.1);
+  --gold: #cead00;
+  --gold-light: rgba(206, 173, 0, 0.15);
+  --red: #ce1126;
+  --red-light: rgba(206, 17, 38, 0.1);
+  --light: #f9f9f9;
+  --dark: #2d2d2d;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --text-muted: #64748b;
+  --focus-ring: 0 0 0 3px rgba(0, 107, 61, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --max-w: 800px;
+  --max-w-wide: 1200px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: #0f1419;
+    --dark: #f5f5f5;
+    --surface: #1a202c;
+    --border: #2d3748;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --green-light: rgba(0, 107, 61, 0.2);
+    --gold-light: rgba(206, 173, 0, 0.2);
+    --red-light: rgba(206, 17, 38, 0.2);
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; color: var(--text); }
+a { color: var(--green); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--green-dark); }
+a:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--space-md);
+  background: var(--green);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: var(--space-md); }
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+@media (prefers-color-scheme: dark) {
+  .site-header { background: rgba(26, 32, 44, 0.85); }
+}
+
+.header-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--green);
+}
+.brand svg { flex-shrink: 0; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-toggle:hover { background: var(--green-light); border-color: var(--green); }
+.nav-toggle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xs);
+  align-items: center;
+}
+.nav-list a {
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-list a:hover { background: var(--green-light); color: var(--green); }
+.nav-list a[aria-current="page"] {
+  background: var(--green);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; gap: var(--space-xs); }
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-md);
+    gap: var(--space-xs);
+    box-shadow: var(--shadow-md);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+  }
+  .nav-list.is-open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-list a { width: 100%; padding: var(--space-sm) var(--space-md); }
+}
+
+/* CONTAINER */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  width: 100%;
+  flex: 1;
+}
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(206, 173, 0, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+.page-header h1 {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+.page-header .indicator {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-xl);
+  font-weight: 700;
+  font-size: 0.85rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+/* SECTIONS */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+.section:hover { box-shadow: var(--shadow-md); }
+.section h2 {
+  font-size: 1.4rem;
+  color: var(--green-dark);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.section h3 { font-size: 1.1rem; color: var(--text); margin: var(--space-lg) 0 var(--space-sm); }
+.section p, .section li { margin-bottom: var(--space-sm); font-size: 1.02rem; }
+.section ul, .section ol { padding-left: var(--space-lg); }
+.section ul li { list-style-type: disc; }
+.section code {
+  background: var(--light);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  border: 1px solid var(--border);
+  color: var(--red);
+}
+.highlight-box {
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  margin: var(--space-md) 0;
+  font-size: 0.95rem;
+}
+.highlight-box strong { color: var(--green-dark); }
+
+/* SETTINGS BUTTON */
+.settings-btn {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: transform var(--transition);
+  z-index: 90;
+}
+.settings-btn:hover { transform: rotate(45deg) scale(1.1); }
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+.modal-backdrop.is-open { display: flex; }
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+.modal h3 { margin-bottom: var(--space-lg); color: var(--green-dark); display: flex; align-items: center; gap: var(--space-sm); font-size: 1.3rem; }
+.modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.modal-close:hover { color: var(--red); }
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { display: block; margin-bottom: var(--space-xs); font-weight: 600; font-size: 0.9rem; }
+.form-group input, .form-group select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--light);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: var(--focus-ring);
+}
+.btn-primary {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+.btn-primary:hover { background: var(--green-dark); }
+
+/* FOOTER */
+.site-footer {
+  background: var(--dark);
+  color: #cbd5e0;
+  padding: var(--space-3xl) var(--space-lg) var(--space-lg);
+  margin-top: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .site-footer { background: #0a0e14; }
+}
+.footer-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-col h4 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: var(--space-md);
+}
+.footer-col p { font-size: 0.9rem; line-height: 1.7; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: var(--space-xs); }
+.footer-col ul li a {
+  color: #cbd5e0;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-col .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+.footer-col .contact-item i {
+  color: var(--gold);
+  margin-top: 3px;
+  width: 16px;
+}
+.footer-bottom {
+  max-width: var(--max-w-wide);
+  margin: var(--space-lg) auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.footer-bottom p { margin-bottom: var(--space-xs); }
+.footer-bottom a { color: var(--gold); }
+.footer-bottom .nacca {
+  display: inline-block;
+  background: rgba(206, 173, 0, 0.15);
+  color: var(--gold);
+  padding: 2px 10px;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: var(--space-xs);
+}
+
+/* PRINT STYLES */
+@media print {
+  .site-header, .settings-btn, .modal-backdrop, .site-footer { display: none !important; }
+  body { background: white; color: black; font-size: 12pt; }
+  .container { max-width: 100%; padding: 0; }
+  .section { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .page-header { background: #eee !important; color: black !important; box-shadow: none; }
+  .page-header h1, .page-header .indicator { color: black !important; }
+}
+
+/* UTILITIES */
+@media (max-width: 640px) {
+  .container { padding: var(--space-xl) var(--space-md); }
+  .page-header { padding: var(--space-xl); }
+  .page-header h1 { font-size: 1.5rem; }
+  .section { padding: var(--space-lg); }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Mini OpenStax Home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#006b3d"/>
+        <path d="M8 10 L16 6 L24 10 L24 22 L16 26 L8 22 Z" fill="#cead00" opacity="0.9"/>
+        <path d="M16 6 L16 26" stroke="#fff" stroke-width="1.5"/>
+        <path d="M8 10 L16 14 L24 10" stroke="#fff" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span>Mini OpenStax</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <span>Menu</span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main id="main-content" class="container">
+
+  <div class="page-header">
+    <h1><i class="fa-solid fa-shield-halved"></i> Privacy Policy</h1>
+    <span class="indicator">Last Updated: June 14, 2026</span>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-handshake"></i> 1. Introduction</h2>
+    <p>Welcome to <strong>Mini OpenStax</strong>. We are committed to protecting the privacy and security of our learners, educators, and visitors. This Privacy Policy explains how we handle information when you use our educational platform, which is proudly aligned with the NaCCA standards-based curriculum for Ghanaian learners.</p>
+    <p>Our core philosophy is <strong>privacy-by-design</strong>. We believe that students should be able to learn, track their progress, and take quizzes without worrying about their personal data being harvested or sold.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-database"></i> 2. Information We Collect</h2>
+    <p>Mini OpenStax is designed to be a <strong>privacy-first, offline-capable</strong> educational tool. We do not require account creation, and we do not collect personal data on central servers.</p>
+    <ul>
+      <li><strong>Local Profile Data:</strong> When you use the settings menu (the gear icon) to enter your name and select a role (Student or Instructor), this information is saved <em>only</em> in your browser's local storage.</li>
+      <li><strong>Learning Progress:</strong> Your quiz scores, attempt history, and mastery levels are stored locally to help you track your progress on the Dashboard and Analytics tabs.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Note:</strong> Because your data is stored locally on your device, it will not be visible if you switch to a different device, use a different browser, or clear your browser's cache and site data.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-gears"></i> 3. How We Use Your Information</h2>
+    <p>The information stored locally is used exclusively to enhance your learning experience:</p>
+    <ul>
+      <li>Personalizing your dashboard with your name.</li>
+      <li>Displaying your quiz history, correct/incorrect breakdowns, and performance metrics.</li>
+      <li>Enabling the "Instructor" view for educators to see simulated class analytics and BI charts.</li>
+      <li>Shuffling quiz options using a seeded RNG to ensure fair and consistent assessments.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-brands fa-whatsapp"></i> 4. WhatsApp Sharing</h2>
+    <p>Our platform includes a feature to share quiz results via WhatsApp. When you click the "Share" button after a quiz:</p>
+    <ul>
+      <li>We use the official WhatsApp URL scheme (<code>wa.me</code>) to open the app or web interface.</li>
+      <li>A pre-formatted text message containing your name, quiz score, and date is generated.</li>
+      <li>You have full control to edit, delete, or cancel the message before sending it to any contact.</li>
+    </ul>
+    <p>We do not have access to the messages you send, your WhatsApp contacts, or your chat history.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-link"></i> 5. Third-Party Services & External Links</h2>
+    <p>To provide a rich, modern learning experience, our lessons may include connections to external resources:</p>
+    <ul>
+      <li><strong>YouTube:</strong> Embedded or linked documentaries (e.g., inauguration ceremonies).</li>
+      <li><strong>Google Fonts:</strong> We load the <em>Inter</em> and <em>Playfair Display</em> typefaces to ensure beautiful, readable typography.</li>
+      <li><strong>Font Awesome:</strong> For the icons used throughout the interface.</li>
+    </ul>
+    <p>These third-party services have their own privacy policies. We encourage you to review them, particularly Google's privacy policy regarding font loading.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-child"></i> 6. Children's Privacy</h2>
+    <p>Mini OpenStax is primarily designed for Basic School learners (Class 6 and above) and secondary students. We do not knowingly collect any personally identifiable information on our servers. Since all data is kept locally on the user's device via <code>localStorage</code>, we inherently comply with international and Ghanaian children's data protection standards.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-lock"></i> 7. Data Security</h2>
+    <p>Since your data never leaves your device, it is protected by your device's own security measures and browser sandboxing. We recommend keeping your device locked, using a secure browser, and regularly updating your software to ensure maximum security.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-file-contract"></i> 8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our platform, new features, or updates to Ghanaian data protection regulations (such as the Data Protection Act, 2012 (Act 843)). Any changes will be posted on this page with an updated "Last Updated" date.</p>
+  </div>
+
+  <div class="section">
+    <h2><i class="fa-solid fa-headset"></i> 9. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact our support team:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:learn@miniopenstax.edu.gh">learn@miniopenstax.edu.gh</a></li>
+      <li><strong>Phone:</strong> +233 25 732 0201</li>
+      <li><strong>Address:</strong> Accra, Ghana</li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- SETTINGS MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close settings">&times;</button>
+    <h3><i class="fa-solid fa-gear"></i> Settings</h3>
+    <div class="form-group">
+      <label for="studentName">Your Name</label>
+      <input type="text" id="studentName" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="userRole">Role</label>
+      <select id="userRole">
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+    </div>
+    <button class="btn-primary" id="saveSettings">Save Settings</button>
+  </div>
+</div>
+
+<!-- SETTINGS BUTTON -->
+<button class="settings-btn" id="settingsBtn" aria-label="Open settings">
+  <i class="fa-solid fa-user-gear"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Mini OpenStax</h4>
+      <p>Free, high-quality, and accessible educational content for Ghanaian learners. Aligned with the NaCCA standards-based curriculum to empower every student.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History Lessons</a></li>
+        <li><a href="contact.html">Contact Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item"><i class="fa-solid fa-phone"></i> <span>+233 25 732 0201</span></div>
+      <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:learn@miniopenstax.edu.gh">learn@miniopenstax.edu.gh</a></div>
+      <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>Accra, Ghana</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Mini OpenStax. All rights reserved.</p>
+    <p><span class="nacca">Content aligned with NaCCA curriculum</span></p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // --- State & LocalStorage ---
+  const KEYS = {
+    NAME: 'student_name',
+    ROLE: 'user_role'
+  };
+
+  const state = {
+    name: localStorage.getItem(KEYS.NAME) || 'Student',
+    role: localStorage.getItem(KEYS.ROLE) || 'student'
+  };
+
+  // --- DOM Elements ---
+  const settingsBtn = document.getElementById('settingsBtn');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const nameInput = document.getElementById('studentName');
+  const roleSelect = document.getElementById('userRole');
+  const saveSettingsBtn = document.getElementById('saveSettings');
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+
+  // --- Initialization ---
+  function init() {
+    nameInput.value = state.name;
+    roleSelect.value = state.role;
+    setupEventListeners();
+  }
+
+  // --- Modal ---
+  function openModal() { modalBackdrop.classList.add('is-open'); }
+  function closeModal() { modalBackdrop.classList.remove('is-open'); }
+
+  function saveSettings() {
+    state.name = nameInput.value.trim() || 'Student';
+    state.role = roleSelect.value;
+    localStorage.setItem(KEYS.NAME, state.name);
+    localStorage.setItem(KEYS.ROLE, state.role);
+    closeModal();
+  }
+
+  // --- Event Listeners ---
+  function setupEventListeners() {
+    settingsBtn.addEventListener('click', openModal);
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', (e) => { if(e.target === modalBackdrop) closeModal(); });
+    saveSettingsBtn.addEventListener('click', saveSettings);
+
+    // Mobile Nav
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navList.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!navList.contains(e.target) && !navToggle.contains(e.target) && navList.classList.contains('is-open')) {
+        navList.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (navList.classList.contains('is-open')) {
+          navList.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
+        if (modalBackdrop.classList.contains('is-open')) closeModal();
+      }
+    });
+  }
+
+  // Auto-save background persistence
+  setInterval(() => {
+    localStorage.setItem('autosave_timestamp', new Date().getTime());
+  }, 30000);
+
+  // Dynamic copyright year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Start
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>})();
+</script>
+
+</body>
+</html>
