@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Class 6 History Dashboard - Track your learning progress, view quiz reports, and analyze performance across all chapters.">
+<title>Dashboard | Class 6 History - Mini OpenStax</title>
+
+<!-- Google Fonts: Inter & Playfair Display via media="print" onload trick -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome 6.4.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --green: #006b3d;
+  --green-dark: #00502e;
+  --green-light: rgba(0, 107, 61, 0.1);
+  --gold: #cead00;
+  --gold-light: rgba(206, 173, 0, 0.15);
+  --red: #ce1126;
+  --red-light: rgba(206, 17, 38, 0.1);
+  --light: #f9f9f9;
+  --dark: #2d2d2d;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --text-muted: #64748b;
+  --focus-ring: 0 0 0 3px rgba(0, 107, 61, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --max-w: 800px;
+  --max-w-wide: 1200px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: #0f1419;
+    --dark: #f5f5f5;
+    --surface: #1a202c;
+    --border: #2d3748;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --green-light: rgba(0, 107, 61, 0.2);
+    --gold-light: rgba(206, 173, 0, 0.2);
+    --red-light: rgba(206, 17, 38, 0.2);
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; color: var(--text); }
+a { color: var(--green); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--green-dark); }
+a:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--space-md);
+  background: var(--green);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: var(--space-md); }
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+@media (prefers-color-scheme: dark) {
+  .site-header { background: rgba(26, 32, 44, 0.85); }
+}
+
+.header-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--green);
+}
+.brand svg { flex-shrink: 0; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-toggle:hover { background: var(--green-light); border-color: var(--green); }
+.nav-toggle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xs);
+  align-items: center;
+}
+.nav-list a {
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-list a:hover { background: var(--green-light); color: var(--green); }
+.nav-list a[aria-current="page"] {
+  background: var(--green);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; gap: var(--space-xs); }
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-md);
+    gap: var(--space-xs);
+    box-shadow: var(--shadow-md);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+  }
+  .nav-list.is-open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-list a { width: 100%; padding: var(--space-sm) var(--space-md); }
+}
+
+/* CONTAINER & TABS */
+.container {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  width: 100%;
+  flex: 1;
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+}
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  font-size: 1rem;
+  transition: color var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+.tab-btn:hover { color: var(--green); }
+.tab-btn.active { color: var(--green); }
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+  border-radius: 3px 3px 0 0;
+}
+.tab-content { display: none; animation: fadeIn 0.4s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* SETTINGS BUTTON */
+.settings-btn {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: transform var(--transition);
+  z-index: 90;
+}
+.settings-btn:hover { transform: rotate(45deg) scale(1.1); }
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+.modal-backdrop.is-open { display: flex; }
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+.modal h3 { margin-bottom: var(--space-lg); color: var(--green-dark); display: flex; align-items: center; gap: var(--space-sm); }
+.modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.modal-close:hover { color: var(--red); }
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { display: block; margin-bottom: var(--space-xs); font-weight: 600; font-size: 0.9rem; }
+.form-group input, .form-group select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--light);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: var(--focus-ring);
+}
+.btn-primary {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+.btn-primary:hover { background: var(--green-dark); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(206, 173, 0, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero h1 {
+  color: white;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  position: relative;
+}
+
+/* KPI GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+}
+.kpi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.kpi-card .icon {
+  font-size: 2rem;
+  color: var(--green);
+  margin-bottom: var(--space-sm);
+}
+.kpi-card .value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+.kpi-card .label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* LIST CARDS */
+.list-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.list-card h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--green-dark);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.list-item:last-child { border-bottom: none; }
+.list-item .chapter-name { font-weight: 600; color: var(--text); flex: 1; min-width: 150px; }
+.list-item .date { color: var(--text-muted); font-size: 0.85rem; }
+.list-item .badge {
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.list-item .badge.low { background: var(--red-light); color: var(--red); }
+.list-item .badge.mid { background: var(--gold-light); color: var(--dark); }
+
+/* COURSE OVERVIEW GRID */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+.chapter-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.chapter-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--green); }
+.chapter-card .ch-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+.chapter-card .ch-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--green-light);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.chapter-card .ch-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.chapter-card .ch-indicator {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+.chapter-card .progress-track {
+  background: var(--light);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--border);
+}
+.chapter-card .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+.chapter-card .progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+.chapter-card .ch-btn {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: var(--space-sm);
+  background: var(--green);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background var(--transition);
+}
+.chapter-card .ch-btn:hover { background: var(--green-dark); color: white; }
+.chapter-card .ch-btn.completed { background: var(--gold); color: var(--dark); }
+.chapter-card .ch-btn.completed:hover { background: #b89b00; }
+
+/* ANALYTICS CHARTS */
+.chart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.chart-container h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--green-dark);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.chart-bar-group { margin-bottom: var(--space-md); }
+.chart-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+.chart-bar-label span:last-child { font-weight: 700; color: var(--green-dark); }
+.chart-bar-track {
+  background: var(--light);
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.chart-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 7px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chart-bar-fill.red { background: linear-gradient(90deg, var(--red), #ff4d6d); }
+.chart-bar-fill.gold { background: linear-gradient(90deg, var(--gold), #ffe066); }
+
+.instructor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--gold-light);
+  color: var(--dark);
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--gold);
+  margin-bottom: var(--space-lg);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--dark);
+  color: #cbd5e0;
+  padding: var(--space-3xl) var(--space-lg) var(--space-lg);
+  margin-top: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .site-footer { background: #0a0e14; }
+}
+.footer-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-col h4 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: var(--space-md);
+}
+.footer-col p { font-size: 0.9rem; line-height: 1.7; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: var(--space-xs); }
+.footer-col ul li a {
+  color: #cbd5e0;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-col .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+.footer-col .contact-item i {
+  color: var(--gold);
+  margin-top: 3px;
+  width: 16px;
+}
+.footer-bottom {
+  max-width: var(--max-w-wide);
+  margin: var(--space-lg) auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.footer-bottom p { margin-bottom: var(--space-xs); }
+.footer-bottom a { color: var(--gold); }
+.footer-bottom .nacca {
+  display: inline-block;
+  background: rgba(206, 173, 0, 0.15);
+  color: var(--gold);
+  padding: 2px 10px;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: var(--space-xs);
+}
+
+/* UTILITIES */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl);
+  color: var(--text-muted);
+}
+.empty-state i { font-size: 3rem; margin-bottom: var(--space-md); opacity: 0.5; }
+.empty-state p { font-size: 1.05rem; }
+
+@media (max-width: 640px) {
+  .container { padding: var(--space-xl) var(--space-md); }
+  .hero { padding: var(--space-xl) var(--space-md); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .kpi-card { padding: var(--space-lg); }
+  .kpi-card .value { font-size: 1.75rem; }
+  .course-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Mini OpenStax Home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#006b3d"/>
+        <path d="M8 10 L16 6 L24 10 L24 22 L16 26 L8 22 Z" fill="#cead00" opacity="0.9"/>
+        <path d="M16 6 L16 26" stroke="#fff" stroke-width="1.5"/>
+        <path d="M8 10 L16 14 L24 10" stroke="#fff" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span>Mini OpenStax</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <span>Menu</span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History</a></li>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main id="main-content" class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>📊 Class 6 History Dashboard</h1>
+    <p>Track your learning journey across all chapters of Strand 6: Independent Ghana.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist">
+    <button class="tab-btn" data-tab="lesson" role="tab" aria-selected="false"><i class="fa-solid fa-book-open"></i> Course Overview</button>
+    <button class="tab-btn active" data-tab="dashboard" role="tab" aria-selected="true"><i class="fa-solid fa-chart-line"></i> My Dashboard</button>
+    <button class="tab-btn" data-tab="analytics" role="tab" aria-selected="false"><i class="fa-solid fa-chart-column"></i> Analytics</button>
+  </div>
+
+  <!-- TAB: COURSE OVERVIEW -->
+  <div class="tab-content" id="tab-lesson" role="tabpanel">
+    <h2 style="margin-bottom: var(--space-lg); color: var(--green-dark);"><i class="fa-solid fa-book-open"></i> Course Overview</h2>
+    <p style="color: var(--text-muted); margin-bottom: var(--space-xl);">Navigate through all 11 chapters of Class 6 History. Your progress is saved automatically.</p>
+    <div class="course-grid" id="courseGrid">
+      <!-- Dynamically populated -->
+    </div>
+  </div>
+
+  <!-- TAB: DASHBOARD -->
+  <div class="tab-content active" id="tab-dashboard" role="tabpanel">
+    <h2 style="margin-bottom: var(--space-lg); color: var(--green-dark);"><i class="fa-solid fa-chart-line"></i> My Learning Progress</h2>
+    <p style="color: var(--text-muted); margin-bottom: var(--space-xl);">Welcome back, <span id="displayName" style="font-weight: 700; color: var(--green);">Student</span>! Here is your overall performance.</p>
+    
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <div class="value" id="kpiQuizzes">0</div>
+        <div class="label">Total Quizzes Taken</div>
+      </div>
+      <div class="kpi-card">
+        <div class="icon"><i class="fa-solid fa-percent"></i></div>
+        <div class="value" id="kpiAvg">0%</div>
+        <div class="label">Overall Average Score</div>
+      </div>
+      <div class="kpi-card">
+        <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="value" id="kpiHighest">0%</div>
+        <div class="label">Highest Score</div>
+      </div>
+      <div class="kpi-card">
+        <div class="icon"><i class="fa-solid fa-star"></i></div>
+        <div class="value" id="kpiMastered">0/11</div>
+        <div class="label">Chapters Mastered</div>
+      </div>
+    </div>
+
+    <div class="list-card">
+      <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Activity</h3>
+      <div id="recentActivity">
+        <div class="empty-state">
+          <i class="fa-solid fa-inbox"></i>
+          <p>No recent activity. Start a chapter quiz to see your progress here!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-card">
+      <h3><i class="fa-solid fa-file-lines"></i> Quiz Reports by Chapter</h3>
+      <div id="quizReports">
+        <div class="empty-state">
+          <i class="fa-solid fa-folder-open"></i>
+          <p>No reports generated yet. Complete a quiz to generate your first report.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: ANALYTICS -->
+  <div class="tab-content" id="tab-analytics" role="tabpanel">
+    <h2 style="margin-bottom: var(--space-lg); color: var(--green-dark);"><i class="fa-solid fa-chart-column"></i> Performance Analytics</h2>
+    
+    <div id="instructorBadgeContainer"></div>
+
+    <div class="chart-container">
+      <h3><i class="fa-solid fa-chart-simple"></i> Average Score by Chapter</h3>
+      <div id="chapterChart">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h3><i class="fa-solid fa-bullseye"></i> Mastery Distribution</h3>
+      <div id="masteryChart">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h3><i class="fa-solid fa-users"></i> Class Performance Metrics <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 400;">(Instructor View)</span></h3>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span>Class Average Score</span><span id="classAvg">78%</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 78%;"></div></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span>Course Completion Rate</span><span>82%</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill gold" style="width: 82%;"></div></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span>Student Engagement</span><span>91%</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: 91%;"></div></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span>Quiz Pass Rate (>80%)</span><span>65%</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill red" style="width: 65%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- SETTINGS MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close settings">&times;</button>
+    <h3><i class="fa-solid fa-gear"></i> Settings</h3>
+    <div class="form-group">
+      <label for="studentName">Your Name</label>
+      <input type="text" id="studentName" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="userRole">Role</label>
+      <select id="userRole">
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+    </div>
+    <button class="btn-primary" id="saveSettings">Save Settings</button>
+  </div>
+</div>
+
+<!-- SETTINGS BUTTON -->
+<button class="settings-btn" id="settingsBtn" aria-label="Open settings">
+  <i class="fa-solid fa-user-gear"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Mini OpenStax</h4>
+      <p>Free, high-quality, and accessible educational content for Ghanaian learners. Aligned with the NaCCA standards-based curriculum to empower every student.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History Lessons</a></li>
+        <li><a href="contact.html">Contact Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item"><i class="fa-solid fa-phone"></i> <span>+233 25 732 0201</span></div>
+      <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:learn@miniopenstax.edu.gh">learn@miniopenstax.edu.gh</a></div>
+      <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>Accra, Ghana</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Mini OpenStax. All rights reserved.</p>
+    <p><span class="nacca">Content aligned with NaCCA curriculum</span></p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // --- Configuration & State ---
+  const KEYS = {
+    NAME: 'student_name',
+    ROLE: 'user_role'
+  };
+
+  const state = {
+    name: localStorage.getItem(KEYS.NAME) || 'Student',
+    role: localStorage.getItem(KEYS.ROLE) || 'student'
+  };
+
+  const chapters = [
+    { id: 0, title: "The Events Leading to the Fourth Republic", indicator: "B6.6.1.1.1", icon: "fa-landmark" },
+    { id: 1, title: "Political Parties of the Fourth Republic", indicator: "B6.6.1.1.2", icon: "fa-users" },
+    { id: 2, title: "Presidents of the Fourth Republic", indicator: "B6.6.1.1.3", icon: "fa-user-tie" },
+    { id: 3, title: "Inauguration & The Sword of Authority", indicator: "B6.6.1.1.4", icon: "fa-scroll" },
+    { id: 4, title: "District Assemblies & Local Governance", indicator: "B6.6.1.1.5", icon: "fa-building-columns" },
+    { id: 5, title: "Military Regimes and Coup Leaders", indicator: "B6.6.2.1.1", icon: "fa-shield-halved" },
+    { id: 6, title: "Reasons for Military Takeovers", indicator: "B6.6.2.1.2", icon: "fa-scale-unbalanced" },
+    { id: 7, title: "Consequences of Military Rule (Negative)", indicator: "B6.6.2.2.1", icon: "fa-triangle-exclamation" },
+    { id: 8, title: "Consequences of Military Rule (Positive)", indicator: "B6.6.2.2.2", icon: "fa-scale-balanced" },
+    { id: 9, title: "Strand 6 Revision & Mastery Check", indicator: "B6.6.3.1.1", icon: "fa-clipboard-list" },
+    { id: 10, title: "Summative Assessment & Final Exam", indicator: "B6.6.3.1.2", icon: "fa-award" }
+  ];
+
+  // --- Data Aggregation ---
+  function getChapterData() {
+    const data = [];
+    let allAttempts = [];
+    
+    chapters.forEach(ch => {
+      const attempts = JSON.parse(localStorage.getItem(`quiz_attempts_ch${ch.id}`) || '[]');
+      const mastery = parseInt(localStorage.getItem(`mastery_ch${ch.id}`) || '0');
+      data.push({ ...ch, attempts, mastery });
+      
+      attempts.forEach(a => {
+        allAttempts.push({ ...a, chapterId: ch.id, chapterTitle: ch.title });
+      });
+    });
+    
+    allAttempts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    return { data, allAttempts };
+  }
+
+  // --- DOM Elements ---
+  const tabs = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  const settingsBtn = document.getElementById('settingsBtn');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalClose = document.getElementById('modalClose');
+  const nameInput = document.getElementById('studentName');
+  const roleSelect = document.getElementById('userRole');
+  const saveSettingsBtn = document.getElementById('saveSettings');
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+
+  // --- Initialization ---
+  function init() {
+    nameInput.value = state.name;
+    roleSelect.value = state.role;
+    
+    renderCourseOverview();
+    renderDashboard();
+    renderAnalytics();
+    setupEventListeners();
+  }
+
+  // --- Tabs ---
+  function switchTab(tabId) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.tab === tabId;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', String(isActive));
+    });
+    tabContents.forEach(c => c.classList.toggle('active', c.id === `tab-${tabId}`));
+  }
+
+  // --- Modal ---
+  function openModal() { modalBackdrop.classList.add('is-open'); }
+  function closeModal() { modalBackdrop.classList.remove('is-open'); }
+
+  function saveSettings() {
+    state.name = nameInput.value.trim() || 'Student';
+    state.role = roleSelect.value;
+    localStorage.setItem(KEYS.NAME, state.name);
+    localStorage.setItem(KEYS.ROLE, state.role);
+    document.getElementById('displayName').textContent = state.name;
+    renderAnalytics(); // Re-render to show/hide instructor badge
+    closeModal();
+  }
+
+  // --- Render Course Overview ---
+  function renderCourseOverview() {
+    const grid = document.getElementById('courseGrid');
+    const { data } = getChapterData();
+    
+    grid.innerHTML = data.map(ch => {
+      const status = ch.mastery >= 80 ? 'Mastered' : ch.attempts.length > 0 ? 'In Progress' : 'Not Started';
+      const btnClass = ch.mastery >= 80 ? 'ch-btn completed' : 'ch-btn';
+      const btnText = ch.mastery >= 80 ? 'Review Chapter' : ch.attempts.length > 0 ? 'Continue Learning' : 'Start Chapter';
+      
+      return `
+        <article class="chapter-card">
+          <div class="ch-header">
+            <div class="ch-icon"><i class="fa-solid ${ch.icon}"></i></div>
+            <div class="ch-title">Chapter ${ch.id}: ${ch.title}</div>
+          </div>
+          <div class="ch-indicator">Indicator: ${ch.indicator}</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: ${ch.mastery}%;"></div>
+          </div>
+          <div class="progress-label">
+            <span>${status}</span>
+            <span>${ch.mastery}%</span>
+          </div>
+          <a href="historyChapter-${ch.id}.html" class="${btnClass}">${btnText} <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      `;
+    }).join('');
+  }
+
+  // --- Render Dashboard ---
+  function renderDashboard() {
+    const { data, allAttempts } = getChapterData();
+    
+    document.getElementById('displayName').textContent = state.name;
+
+    // KPIs
+    let totalQuizzes = allAttempts.length;
+    let totalScore = 0;
+    let highestScore = 0;
+    let chaptersMastered = 0;
+
+    data.forEach(ch => {
+      if(ch.mastery > highestScore) highestScore = ch.mastery;
+      if(ch.mastery >= 80) chaptersMastered++;
+      ch.attempts.forEach(a => totalScore += a.percentage);
+    });
+
+    const avgScore = totalQuizzes > 0 ? Math.round(totalScore / totalQuizzes) : 0;
+
+    document.getElementById('kpiQuizzes').textContent = totalQuizzes;
+    document.getElementById('kpiAvg').textContent = avgScore + '%';
+    document.getElementById('kpiHighest').textContent = highestScore + '%';
+    document.getElementById('kpiMastered').textContent = `${chaptersMastered}/11`;
+
+    // Recent Activity
+    const recentDiv = document.getElementById('recentActivity');
+    if(allAttempts.length === 0) {
+      recentDiv.innerHTML = `<div class="empty-state"><i class="fa-solid fa-inbox"></i><p>No recent activity. Start a chapter quiz to see your progress here!</p></div>`;
+    } else {
+      const recent = allAttempts.slice(0, 5);
+      recentDiv.innerHTML = recent.map(a => {
+        const badgeClass = a.percentage >= 80 ? '' : a.percentage >= 50 ? 'mid' : 'low';
+        return `
+          <div class="list-item">
+            <span class="chapter-name">${a.chapterTitle}</span>
+            <span class="date">${new Date(a.date).toLocaleDateString()}</span>
+            <span class="badge ${badgeClass}">${a.percentage}%</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Quiz Reports
+    const reportsDiv = document.getElementById('quizReports');
+    const activeChapters = data.filter(ch => ch.attempts.length > 0);
+    if(activeChapters.length === 0) {
+      reportsDiv.innerHTML = `<div class="empty-state"><i class="fa-solid fa-folder-open"></i><p>No reports generated yet. Complete a quiz to generate your first report.</p></div>`;
+    } else {
+      reportsDiv.innerHTML = activeChapters.map(ch => {
+        const badgeClass = ch.mastery >= 80 ? '' : ch.mastery >= 50 ? 'mid' : 'low';
+        return `
+          <div class="list-item">
+            <span class="chapter-name">Chapter ${ch.id}: ${ch.title}</span>
+            <span class="date">${ch.attempts.length} attempt${ch.attempts.length > 1 ? 's' : ''}</span>
+            <span class="badge ${badgeClass}">Best: ${ch.mastery}%</span>
+          </div>
+        `;
+      }).join('');
+    }
+  }
+
+  // --- Render Analytics ---
+  function renderAnalytics() {
+    const { data } = getChapterData();
+    
+    // Instructor Badge
+    const badgeContainer = document.getElementById('instructorBadgeContainer');
+    if(state.role === 'instructor') {
+      badgeContainer.innerHTML = `<div class="instructor-badge"><i class="fa-solid fa-chalkboard-user"></i> Instructor Mode Active</div>`;
+    } else {
+      badgeContainer.innerHTML = '';
+    }
+
+    // Chapter Chart
+    const chartDiv = document.getElementById('chapterChart');
+    if(data.every(ch => ch.attempts.length === 0)) {
+      chartDiv.innerHTML = `<div class="empty-state"><i class="fa-solid fa-chart-simple"></i><p>Complete quizzes to see your performance chart.</p></div>`;
+    } else {
+      chartDiv.innerHTML = data.map(ch => {
+        const avg = ch.attempts.length > 0 ? Math.round(ch.attempts.reduce((sum, a) => sum + a.percentage, 0) / ch.attempts.length) : 0;
+        const colorClass = avg >= 80 ? '' : avg >= 50 ? 'gold' : 'red';
+        return `
+          <div class="chart-bar-group">
+            <div class="chart-bar-label">
+              <span>Ch ${ch.id}: ${ch.title.substring(0, 30)}${ch.title.length > 30 ? '...' : ''}</span>
+              <span>${avg}%</span>
+            </div>
+            <div class="chart-bar-track">
+              <div class="chart-bar-fill ${colorClass}" style="width: ${avg}%;"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Mastery Distribution
+    const masteryDiv = document.getElementById('masteryChart');
+    let mastered = 0, inProgress = 0, notStarted = 0;
+    data.forEach(ch => {
+      if(ch.mastery >= 80) mastered++;
+      else if(ch.attempts.length > 0) inProgress++;
+      else notStarted++;
+    });
+
+    masteryDiv.innerHTML = `
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span><i class="fa-solid fa-star" style="color: var(--green);"></i> Mastered (80%+)</span><span>${mastered} Chapters</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width: ${(mastered/11)*100}%;"></div></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span><i class="fa-solid fa-spinner" style="color: var(--gold);"></i> In Progress</span><span>${inProgress} Chapters</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill gold" style="width: ${(inProgress/11)*100}%;"></div></div>
+      </div>
+      <div class="chart-bar-group">
+        <div class="chart-bar-label"><span><i class="fa-solid fa-circle" style="color: var(--text-muted);"></i> Not Started</span><span>${notStarted} Chapters</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill red" style="width: ${(notStarted/11)*100}%;"></div></div>
+      </div>
+    `;
+  }
+
+  // --- Event Listeners ---
+  function setupEventListeners() {
+    tabs.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+    settingsBtn.addEventListener('click', openModal);
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', (e) => { if(e.target === modalBackdrop) closeModal(); });
+    saveSettingsBtn.addEventListener('click', saveSettings);
+
+    // Mobile Nav
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navList.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', (e) => {
+      if (!navList.contains(e.target) && !navToggle.contains(e.target) && navList.classList.contains('is-open')) {
+        navList.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (navList.classList.contains('is-open')) {
+          navList.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
+        if (modalBackdrop.classList.contains('is-open')) closeModal();
+      }
+    });
+  }
+
+  // Auto-save background persistence
+  setInterval(() => {
+    localStorage.setItem('autosave_timestamp', new Date().getTime());
+  }, 30000);
+
+  // Dynamic copyright year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Start
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>})();
+</script>
+
+</body>
+</html>
