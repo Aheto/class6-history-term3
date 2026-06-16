@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Class 6 History - The Political Parties of the Fourth Republic. Learn about Ghana's democratic journey, NDC, NPP, and the presidents of the Fourth Republic.">
+<title>Class 6 History | The Political Parties of the Fourth Republic - Mini OpenStax</title>
+
+<!-- Google Fonts: Inter & Playfair Display via media="print" onload trick -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome 6.4.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --green: #006b3d;
+  --green-dark: #00502e;
+  --green-light: #e8f5ee;
+  --gold: #cead00;
+  --gold-light: #fdf6d8;
+  --red: #ce1126;
+  --red-light: #fde8ea;
+  --light: #f9f9f9;
+  --dark: #2d2d2d;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --text-muted: #64748b;
+  --focus-ring: 0 0 0 3px rgba(0, 107, 61, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --max-w: 800px;
+  --max-w-wide: 1200px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: #0f1419;
+    --dark: #f5f5f5;
+    --surface: #1a202c;
+    --border: #2d3748;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --green-light: #0a2e1d;
+    --gold-light: #3d3400;
+    --red-light: #3d0a10;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; color: var(--text); }
+
+a { color: var(--green); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--green-dark); }
+a:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--space-md);
+  background: var(--green);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: var(--space-md); }
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+@media (prefers-color-scheme: dark) {
+  .site-header { background: rgba(26, 32, 44, 0.85); }
+}
+
+.header-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--green);
+}
+.brand svg { flex-shrink: 0; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-toggle:hover { background: var(--green-light); border-color: var(--green); }
+.nav-toggle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-xs);
+  align-items: center;
+}
+.nav-list a {
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.nav-list a:hover { background: var(--green-light); color: var(--green); }
+.nav-list a[aria-current="page"] {
+  background: var(--green);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; gap: var(--space-xs); }
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-md);
+    gap: var(--space-xs);
+    box-shadow: var(--shadow-md);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+  }
+  .nav-list.is-open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-list a { width: 100%; padding: var(--space-sm) var(--space-md); }
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+  border-bottom: 4px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(206, 173, 0, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(206, 17, 38, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-inner { max-width: var(--max-w-wide); margin: 0 auto; position: relative; z-index: 1; }
+.hero h1 {
+  color: white;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: var(--space-sm);
+  font-weight: 800;
+}
+.hero .subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  opacity: 0.95;
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+.hero .indicator {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--radius-xl);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-md);
+}
+
+/* MAIN */
+main {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+  width: 100%;
+  flex: 1;
+}
+
+.section { margin-bottom: var(--space-3xl); }
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--space-md);
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.section-title::before {
+  content: '';
+  width: 5px;
+  height: 1.5em;
+  background: linear-gradient(180deg, var(--green), var(--gold));
+  border-radius: 3px;
+}
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+  font-size: 1.05rem;
+}
+
+/* OBJECTIVE CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.objective-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.objective-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--red));
+}
+.objective-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green);
+}
+.objective-card .card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.objective-card .card-num {
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.objective-card .indicator-tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.objective-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+  color: var(--green-dark);
+}
+.objective-card .strand {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px dashed var(--border);
+}
+.objective-card .strand strong { color: var(--text); }
+.objective-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--green);
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+}
+.objective-card ul {
+  list-style: none;
+  margin-bottom: var(--space-md);
+}
+.objective-card ul li {
+  padding: var(--space-xs) 0;
+  padding-left: 1.75rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.objective-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.objective-card .meta {
+  background: var(--light);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.85rem;
+}
+.objective-card .meta strong { color: var(--green-dark); display: block; margin-bottom: 2px; }
+.objective-card .keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+.objective-card .keywords span {
+  background: var(--gold-light);
+  color: var(--dark);
+  padding: 2px 10px;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--gold);
+}
+
+/* LESSON GRIDS (TABLES) */
+.grid-section { margin-bottom: var(--space-2xl); }
+.grid-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius-sm);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  font-size: 0.9rem;
+}
+.data-table thead {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: white;
+}
+.data-table th {
+  padding: var(--space-md);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--gold);
+}
+.data-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.data-table tbody tr { transition: background var(--transition); }
+.data-table tbody tr:hover { background: var(--green-light); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table td:first-child {
+  font-weight: 700;
+  color: var(--green-dark);
+  text-align: center;
+  background: var(--light);
+  width: 60px;
+}
+.data-table td ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.data-table td ul li {
+  padding: 2px 0 2px 1.25rem;
+  position: relative;
+  font-size: 0.85rem;
+}
+.data-table td ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* STRATEGY CARDS */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+.strategy-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.strategy-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.strategy-card.struggling h3 { color: var(--red); }
+.strategy-card.advanced h3 { color: var(--green); }
+.strategy-card ul {
+  list-style: none;
+}
+.strategy-card ul li {
+  padding: var(--space-xs) 0 var(--space-xs) 1.75rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+.strategy-card.struggling ul li::before {
+  content: '🎯';
+  position: absolute;
+  left: 0;
+}
+.strategy-card.advanced ul li::before {
+  content: '🚀';
+  position: absolute;
+  left: 0;
+}
+
+/* CROSS-CURRICULAR */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+.link-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.link-chip:hover {
+  transform: translateX(4px);
+  border-left-color: var(--green);
+  box-shadow: var(--shadow-md);
+  color: var(--green-dark);
+}
+.link-chip i { color: var(--gold); font-size: 1.25rem; }
+
+/* PROGRESS CARD */
+.progress-card {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.progress-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(206, 173, 0, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.progress-card h2 {
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+.progress-card p {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+.progress-card .subtext {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--dark);
+  color: #cbd5e0;
+  padding: var(--space-3xl) var(--space-lg) var(--space-lg);
+  margin-top: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .site-footer { background: #0a0e14; }
+}
+.footer-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-col h4 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: var(--space-md);
+}
+.footer-col p { font-size: 0.9rem; line-height: 1.7; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: var(--space-xs); }
+.footer-col ul li a {
+  color: #cbd5e0;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-col .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.9rem;
+}
+.footer-col .contact-item i {
+  color: var(--gold);
+  margin-top: 3px;
+  width: 16px;
+}
+.footer-bottom {
+  max-width: var(--max-w-wide);
+  margin: var(--space-lg) auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.footer-bottom p { margin-bottom: var(--space-xs); }
+.footer-bottom a { color: var(--gold); }
+.footer-bottom .nacca {
+  display: inline-block;
+  background: rgba(206, 173, 0, 0.15);
+  color: var(--gold);
+  padding: 2px 10px;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: var(--space-xs);
+}
+
+/* UTILITIES */
+@media (max-width: 640px) {
+  main { padding: var(--space-xl) var(--space-md); }
+  .hero { padding: var(--space-2xl) var(--space-md); }
+  .objective-card { padding: var(--space-lg); }
+  .strategy-card, .progress-card { padding: var(--space-lg); }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Mini OpenStax Home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="#006b3d"/>
+        <path d="M8 10 L16 6 L24 10 L24 22 L16 26 L8 22 Z" fill="#cead00" opacity="0.9"/>
+        <path d="M16 6 L16 26" stroke="#fff" stroke-width="1.5"/>
+        <path d="M8 10 L16 14 L24 10" stroke="#fff" stroke-width="1.5" fill="none"/>
+      </svg>
+      <span>Mini OpenStax</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle navigation menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <span>Menu</span>
+    </button>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>📚 Class 6 History</h1>
+    <p class="subtitle">The Political Parties of the Fourth Republic</p>
+    <span class="indicator">Indicator: B6.6.1.1.2</span>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main id="main-content">
+
+  <!-- LESSON OBJECTIVES -->
+  <section class="section" aria-labelledby="objectives-title">
+    <h2 class="section-title" id="objectives-title">Lesson Objectives</h2>
+    <p class="section-subtitle">Master the key concepts of Ghana's Fourth Republic through four focused lessons.</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <article class="objective-card">
+        <div class="card-head">
+          <span class="card-num">Lesson 1</span>
+          <span class="indicator-tag">B6.6.1.1.1</span>
+        </div>
+        <h3>Events Leading to the Fourth Republic</h3>
+        <p class="strand"><strong>Strand:</strong> Independent Ghana &nbsp;|&nbsp; <strong>Sub-strand:</strong> The Republics</p>
+        <h4>By the end of this lesson, learners will be able to:</h4>
+        <ul>
+          <li>Define what a republic is and explain Ghana's journey through four republics</li>
+          <li>Describe the military coups d'état that interrupted constitutional rule (1966, 1972, 1979, 1981)</li>
+          <li>Explain the events that led to the emergence of the Fourth Republic in 1993</li>
+          <li>Identify the role of Flight Lieutenant Jerry Rawlings in the transition to multi-party democracy</li>
+          <li>Discuss the writing of the 1992 Constitution and its significance</li>
+          <li>Sequence the timeline of republics and military rule from 1960 to present</li>
+        </ul>
+        <div class="meta"><strong>Core Competencies:</strong> Communication &amp; Collaboration, Critical Thinking, Personal Development &amp; Leadership</div>
+        <div class="keywords">
+          <span>Republic</span><span>Coup d'état</span><span>Multi-party democracy</span><span>Constitution</span><span>PNDC</span><span>Transition</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="objective-card">
+        <div class="card-head">
+          <span class="card-num">Lesson 2</span>
+          <span class="indicator-tag">B6.6.1.1.2</span>
+        </div>
+        <h3>Political Parties of the Fourth Republic</h3>
+        <p class="strand"><strong>Strand:</strong> Independent Ghana &nbsp;|&nbsp; <strong>Sub-strand:</strong> The Republics</p>
+        <h4>By the end of this lesson, learners will be able to:</h4>
+        <ul>
+          <li>Identify the two major political parties: NDC and NPP</li>
+          <li>Name the five presidents of the Fourth Republic and their political parties</li>
+          <li>Match each president to their years in office (Rawlings 1993-2001, Kufuor 2001-2009, Mills 2009-2012, Mahama 2012-2017, Akufo-Addo 2017-present)</li>
+          <li>Recognize other registered political parties (GCPP, APC, RPD, YPP, DFP, etc.)</li>
+          <li>Explain the concept of peaceful transfer of power through democratic elections</li>
+          <li>Describe the inauguration ceremony and the Sword of Authority</li>
+        </ul>
+        <div class="meta"><strong>Core Competencies:</strong> Communication, Creativity &amp; Innovation, Cultural Identity</div>
+        <div class="keywords">
+          <span>NDC</span><span>NPP</span><span>President</span><span>Inauguration</span><span>Elections</span><span>Democracy</span><span>Flagbearer</span><span>Cabinet</span>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="objective-card">
+        <div class="card-head">
+          <span class="card-num">Lesson 3</span>
+          <span class="indicator-tag">B6.6.2.1.1</span>
+        </div>
+        <h3>Military Regimes and Coup Leaders</h3>
+        <p class="strand"><strong>Strand:</strong> Independent Ghana &nbsp;|&nbsp; <strong>Sub-strand:</strong> Military Rule</p>
+        <h4>By the end of this lesson, learners will be able to:</h4>
+        <ul>
+          <li>Identify the six military coups d'état in Ghana's history</li>
+          <li>Name the leaders of each coup: Joseph Ankrah (1966), Ignatius Acheampong (1972), Jerry Rawlings (1979 &amp; 1981), Fred Akuffo (1978)</li>
+          <li>Match military regimes to their names: NLC, SMC, AFRC, PNDC</li>
+          <li>Explain the reasons given for each military takeover</li>
+          <li>Describe how military rule interrupted constitutional governance</li>
+          <li>Discuss why the Fourth Republic has remained stable without military intervention</li>
+        </ul>
+        <div class="meta"><strong>Core Competencies:</strong> Critical Thinking, Personal Development, Citizenship</div>
+        <div class="keywords">
+          <span>Military regime</span><span>Coup d'état</span><span>NLC</span><span>SMC</span><span>AFRC</span><span>PNDC</span><span>Overthrow</span><span>Dictatorship</span>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="objective-card">
+        <div class="card-head">
+          <span class="card-num">Lesson 4</span>
+          <span class="indicator-tag">B6.6.2.2.2</span>
+        </div>
+        <h3>Consequences of Military Takeovers</h3>
+        <p class="strand"><strong>Strand:</strong> Independent Ghana &nbsp;|&nbsp; <strong>Sub-strand:</strong> Military Rule</p>
+        <h4>By the end of this lesson, learners will be able to:</h4>
+        <ul>
+          <li>Assess the negative effects: economic decline, human rights violations, loss of lives, insecurity</li>
+          <li>Identify positive outcomes: accountability, law and order, awareness of people's interests</li>
+          <li>Explain how coups prevented political and economic development</li>
+          <li>Discuss the violation of human rights and confiscation of property</li>
+          <li>Analyze why democratic governance is preferable to military rule</li>
+          <li>Conclude whether military takeovers helped or harmed Ghana's development</li>
+        </ul>
+        <div class="meta"><strong>Core Competencies:</strong> Critical Thinking, Problem Solving, Citizenship</div>
+        <div class="keywords">
+          <span>Human rights</span><span>Economic development</span><span>Insecurity</span><span>Curfew</span><span>Investors</span><span>Democracy</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- LESSON GRIDS -->
+  <section class="section" aria-labelledby="grids-title">
+    <h2 class="section-title" id="grids-title">Lesson Grids</h2>
+    <p class="section-subtitle">A detailed breakdown of every lesson, its objectives, activities, and assessments.</p>
+
+    <!-- GRID 1 -->
+    <div class="grid-section">
+      <h3 class="grid-title"><i class="fa-solid fa-landmark"></i> &nbsp;The Republics — 6 Lessons</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Lesson</th>
+              <th>Topic</th>
+              <th>Duration</th>
+              <th>Learning Objectives</th>
+              <th>Activities</th>
+              <th>Resources</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Understanding Republics &amp; Ghana's Political History</td>
+              <td>60 min</td>
+              <td><ul><li>Define a republic</li><li>Recall the four republics</li><li>Identify periods of military rule</li></ul></td>
+              <td><ul><li>Class discussion on current president</li><li>Timeline activity</li><li>Quiz on presidents</li></ul></td>
+              <td>LB pp. 94-98, Resource 9, Internet</td>
+              <td><ul><li>Formative: Observation during discussion</li><li>Summative: Quiz 1</li></ul></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Events Leading to the Fourth Republic</td>
+              <td>60 min</td>
+              <td><ul><li>Describe coups d'état</li><li>Explain transition to democracy</li><li>Discuss 1992 Constitution</li></ul></td>
+              <td><ul><li>Watch inauguration videos</li><li>Group research on PNDC</li><li>Create information poster</li></ul></td>
+              <td>LB pp. 94-98, YouTube videos, Resource 10</td>
+              <td><ul><li>Formative: Poster assessment</li><li>Exercise 4.1 (T/F)</li></ul></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Presidents of the Fourth Republic — Part 1</td>
+              <td>60 min</td>
+              <td><ul><li>Identify Rawlings &amp; Kufuor</li><li>Describe their backgrounds</li><li>State years in office</li></ul></td>
+              <td><ul><li>Homework research presentation</li><li>Speech preparation</li><li>Flashcard game</li></ul></td>
+              <td>LB pp. 99-103, Resource 9, Library books</td>
+              <td><ul><li>Formative: Speech presentation</li><li>Peer assessment</li></ul></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Presidents of the Fourth Republic — Part 2</td>
+              <td>60 min</td>
+              <td><ul><li>Identify Mills, Mahama &amp; Akufo-Addo</li><li>Compare their achievements</li><li>Understand succession</li></ul></td>
+              <td><ul><li>Group presentations</li><li>Timeline creation</li><li>Quiz on presidents</li></ul></td>
+              <td>LB pp. 103-104, Internet, Resource 11</td>
+              <td><ul><li>Formative: Group work rubric</li><li>Exercise 4.2</li></ul></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Political Parties &amp; Inauguration</td>
+              <td>60 min</td>
+              <td><ul><li>Identify NDC &amp; NPP</li><li>Explain inauguration ceremony</li><li>Describe Sword of Authority</li></ul></td>
+              <td><ul><li>Watch inauguration documentaries</li><li>Discuss party symbols</li><li>Match leaders to parties</li></ul></td>
+              <td>LB pp. 105-106, YouTube videos, Resource 12</td>
+              <td><ul><li>Formative: Discussion observation</li><li>Activity 4.3</li></ul></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>District Assemblies &amp; Governance</td>
+              <td>60 min</td>
+              <td><ul><li>Explain role of District Assemblies</li><li>Identify local government structures</li><li>Research community achievements</li></ul></td>
+              <td><ul><li>Visit District Assembly (if possible)</li><li>Interview DCE</li><li>Group discussion</li></ul></td>
+              <td>LB pp. 110, Internet, Community visits</td>
+              <td><ul><li>Formative: Group presentation</li><li>Extension activity</li></ul></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GRID 2 -->
+    <div class="grid-section">
+      <h3 class="grid-title"><i class="fa-solid fa-shield-halved"></i> &nbsp;Military Rule — 4 Lessons</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Lesson</th>
+              <th>Topic</th>
+              <th>Duration</th>
+              <th>Learning Objectives</th>
+              <th>Activities</th>
+              <th>Resources</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Military Coups &amp; Their Leaders</td>
+              <td>60 min</td>
+              <td><ul><li>Identify 6 coups</li><li>Name coup leaders</li><li>Match regimes to dates</li></ul></td>
+              <td><ul><li>Documentary viewing</li><li>Create information booklet</li><li>Research military leaders</li></ul></td>
+              <td>LB pp. 112-114, Resource 13, YouTube videos</td>
+              <td><ul><li>Formative: Booklet assessment</li><li>Exercise 4.3</li></ul></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Reasons for Military Takeovers</td>
+              <td>60 min</td>
+              <td><ul><li>Explain corruption &amp; human rights abuses</li><li>Discuss one-party state</li><li>Analyze economic failures</li></ul></td>
+              <td><ul><li>Class debate</li><li>Mind map creation</li><li>Research reasons for 1966 coup</li></ul></td>
+              <td>LB pp. 114-117, Internet, Library books</td>
+              <td><ul><li>Formative: Debate rubric</li><li>Homework presentation</li></ul></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Consequences of Military Rule — Negative Effects</td>
+              <td>60 min</td>
+              <td><ul><li>Assess economic decline</li><li>Discuss human rights violations</li><li>Explain loss of lives &amp; property</li></ul></td>
+              <td><ul><li>Group debate on effects</li><li>Mind map of consequences</li><li>Essay writing (180 words)</li></ul></td>
+              <td>LB pp. 118-120, Resource 3, Articles</td>
+              <td><ul><li>Formative: Essay assessment</li><li>Exercise 4.5 (Q1-8)</li></ul></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Consequences — Positive Effects &amp; Conclusion</td>
+              <td>60 min</td>
+              <td><ul><li>Identify law &amp; order maintenance</li><li>Discuss government accountability</li><li>Conclude on overall impact</li></ul></td>
+              <td><ul><li>Class timeline creation</li><li>Group paragraph writing</li><li>Self-assessment</li></ul></td>
+              <td>LB pp. 120-121, Revision questions</td>
+              <td><ul><li>Summative: Strand assessment</li><li>End-of-year exam prep</li></ul></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GRID 3 -->
+    <div class="grid-section">
+      <h3 class="grid-title"><i class="fa-solid fa-clipboard-check"></i> &nbsp;Assessment &amp; Revision — 2 Lessons</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Lesson</th>
+              <th>Topic</th>
+              <th>Duration</th>
+              <th>Learning Objectives</th>
+              <th>Activities</th>
+              <th>Resources</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Strand 6 Revision</td>
+              <td>60 min</td>
+              <td><ul><li>Review all indicators</li><li>Practice MCQs</li><li>Clarify misconceptions</li></ul></td>
+              <td><ul><li>Complete revision questions</li><li>Peer assessment</li><li>Group quiz</li></ul></td>
+              <td>LB pp. 93, 122, Worksheet 9-12, Past questions</td>
+              <td><ul><li>Formative: Self-assessment</li><li>Peer checking</li></ul></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Summative Assessment</td>
+              <td>60 min</td>
+              <td><ul><li>Demonstrate mastery of Strand 6</li><li>Apply knowledge to new scenarios</li></ul></td>
+              <td><ul><li>Write Strand 6 Assessment</li><li>End-of-year exam practice</li></ul></td>
+              <td>Assessment pp. 94-97, Exercise books</td>
+              <td><ul><li>Summative: Strand 6 Test (40 marks)</li><li>End-of-year exam (100 marks)</li></ul></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATION STRATEGIES -->
+  <section class="section" aria-labelledby="strategies-title">
+    <h2 class="section-title" id="strategies-title">Differentiation Strategies</h2>
+    <p class="section-subtitle">Tailored support to ensure every learner succeeds — whether they need extra help or an extra challenge.</p>
+
+    <div class="strategy-grid">
+      <article class="strategy-card struggling">
+        <h3><i class="fa-solid fa-hand-holding-heart"></i> For Struggling Learners</h3>
+        <ul>
+          <li>Use flashcards and matching games (Resource 9, 11)</li>
+          <li>Pair work for peer support</li>
+          <li>Simplified timelines with key dates only</li>
+          <li>Remedial quizzes in pairs</li>
+        </ul>
+      </article>
+
+      <article class="strategy-card advanced">
+        <h3><i class="fa-solid fa-rocket"></i> For Advanced Learners</h3>
+        <ul>
+          <li>Research additional presidents' biographies</li>
+          <li>Write comparative essays on republics</li>
+          <li>Create detailed timelines with photos</li>
+          <li>Interview community leaders about governance</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CROSS-CURRICULAR LINKS -->
+  <section class="section" aria-labelledby="links-title">
+    <h2 class="section-title" id="links-title">Cross-Curricular Links</h2>
+    <p class="section-subtitle">Connect history to other subjects for a richer, integrated learning experience.</p>
+
+    <div class="links-grid">
+      <div class="link-chip"><i class="fa-solid fa-scale-balanced"></i> Civic Education</div>
+      <div class="link-chip"><i class="fa-solid fa-book-open"></i> English Language</div>
+      <div class="link-chip"><i class="fa-solid fa-laptop-code"></i> ICT</div>
+      <div class="link-chip"><i class="fa-solid fa-people-group"></i> Social Studies</div>
+      <div class="link-chip"><i class="fa-solid fa-palette"></i> Creative Arts</div>
+    </div>
+  </section>
+
+  <!-- PROGRESS TRACKING -->
+  <section class="section" aria-labelledby="progress-title">
+    <div class="progress-card">
+      <h2 id="progress-title">📊 Track Your Progress</h2>
+      <p>Each lesson includes a 20-question quiz. Complete all lessons to master this topic!</p>
+      <p class="subtext">Your progress is automatically saved and can be shared via WhatsApp.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Mini OpenStax</h4>
+      <p>Free, high-quality, and accessible educational content for Ghanaian learners. Aligned with the NaCCA standards-based curriculum to empower every student.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Class 6</a></li>
+        <li><a href="historyChapter-0.html">History Lessons</a></li>
+        <li><a href="contact.html">Contact Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item"><i class="fa-solid fa-phone"></i> <span>+233 25 732 0201</span></div>
+      <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:learn@miniopenstax.edu.gh">learn@miniopenstax.edu.gh</a></div>
+      <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>Accra, Ghana</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Mini OpenStax. All rights reserved.</p>
+    <p><span class="nacca">Content aligned with NaCCA curriculum</span></p>
+    <p><a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // Dynamic copyright year
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  var toggle = document.getElementById('navToggle');
+  var navList = document.getElementById('navList');
+
+  if (toggle && navList) {
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = navList.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Click outside to close
+    document.addEventListener('click', function (e) {
+      if (!navList.contains(e.target) && !toggle.contains(e.target) && navList.classList.contains('is-open')) {
+        navList.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Escape key to close and refocus
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navList.classList.contains('is-open')) {
+        navList.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+
+    // Close on nav link click (mobile UX)
+    navList.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          navList.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>);
+</script>
+
+</body>
+</html>
